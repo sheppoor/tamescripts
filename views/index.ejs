@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><%=i18n.appTitle%></title>
+    <meta description="<%=i18n.appSubtitle%>" />
+    <link rel="stylesheet" href="/resources/stylesheets/style.css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/simple-datatables/dist/style.css">
+    <link rel="stylesheet" href="/vanillajs-datepicker/css/datepicker.min.css">
+    <link rel="shortcut icon" href="/resources/images/favicon.ico" />
+  </head>
+
+
+
+  <body onload="startup()">
+    <div class="container mt-4">
+
+        <div class="row">
+          <div class="col-9">
+            <h1><%=i18n.appTitle%></h1>
+          </div>
+          <div class="col-3">
+            <div class="float-end mt-2">
+            <button class="btn btn-secondary px-1 py-0 lightdarktoggle">
+              <i class="bi bi-sun-fill"></i> <i class="bi bi-moon"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+
+      <p class="lead"><%=i18n.appSubtitle%></p>
+      <p><%=i18n.appDesc%></p>
+
+      <div class="row mt-3">
+        <div class="col-5 mb-4 mt-2">
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAdd">
+            <i class="bi bi-plus-circle"></i> <%=i18n.btnAddTranscript%>
+          </button>
+          <button type="button" class="btn btn-primary" id="btnListTranscripts">
+            <i class="bi bi-card-list"></i> <%=i18n.btnListTranscripts%>
+          </button>
+        </div>
+
+        <div class="col-3">
+          <div id="alertPlaceholder"></div>
+        </div>
+
+        <div class="col-4 text-end mt-1 mb-4">
+            <%=i18n.statsTranscripts%>: <span id="lazyIndexstatsTranscripts">-</span><br>
+            <%=i18n.statsTextLines%>: <span id="lazyIndexstatsTextlines">-</span>
+        </div>
+
+      </div>
+
+      <h4><%=i18n.searchCriteriaTitle%></h4>
+
+      <form id="formSearch">
+        <div>
+          <div class="row">
+            <label class="form-label col-2" for="formSearchPhrase"><%=i18n.searchPhraseLabel%> 
+              <button type="button" class="btn btn-secondary btn-sm help-btn" id="btnHelp" data-bs-toggle="tooltip" data-bs-toggle="tooltip" 
+                title="Learn how to perform advanced searches, click or press Ctrl-F1">
+                <i class="bi bi-question-circle help-icon"></i>
+              </button>
+            </label>
+            <div class="col-10">
+              <input type="text" class="form-control" id="formSearchPhrase" name="formSearchPhrase" placeholder="<%=i18n.searchPhrasePlaceholder%>" maxlength="100" autocomplete="off"/>
+            </div>
+          </div>
+
+          <div class="row">
+            <label class="form-label col-2" for="formSearchSpeaker"><%=i18n.searchSpeakerLabel%></label>
+            <div class="col-5">
+              <input class="form-control" list="speakerDataList" id="formSearchSpeaker" name="formSearchSpeaker" placeholder="Start typing, choose from dropdown" autocomplete="off">
+              <datalist id="speakerDataList" class="datalisthere">
+                <!-- Options added in the JS below, based on distinct speakers -->
+              </datalist>
+            </div>
+          </div>
+
+
+
+          <div class="collapse mt-2" id="collapseAddtnlSearch">
+
+            <div class="row">
+              <label class="form-label col-2" for="formSearchDate"><%=i18n.searchDateLabel%></label>
+              <div class="col-10"><i>Two date pickers, default to blank, easy to clear</i></div>
+            </div>
+
+            <div class="row">
+              <label class="form-label col-2" class="form-label" for="formSearchTitle"><%=i18n.searchTagLabel%></label>
+              <div class="col-10"><i>type ahead drop down of all tags in use (multi-select, OR clause)</i></div>
+            </div>
+
+            <div class="row">
+              <label class="form-label col-2" class="form-label" for="formSearchTitle"><%=i18n.searchTitleLabel%></label>
+              <div class="col-10"><i>type ahead drop down of all meeting titles</i></div>
+            </div>
+
+            <div class="row">
+              <label class="form-label col-2" class="form-label" for="formSearchParticipants"><%=i18n.searchParticipantsLabel%></label>
+              <div class="col-10"><i>multi-select input field (AND clause)</i></div>
+            </div>
+
+            <div class="row">
+              <label class="form-label col-2" class="form-label" for="formSearchTime"><%=i18n.searchTimeLabel%></label>
+              <div class="col-10"><i>Two time pickers or entry fields, easy to clear</i></div>
+            </div>
+
+            <div class="row">
+              <label class="form-label col-2" class="form-label" for="formSearchTime"><%=i18n.searchOptionsLabel%></label>
+              <div class="col-10"><i>At least an option to show only counts of results per transcripts. More?</i></div>
+            </div>
+
+          </div>
+
+          <div class="row mt-3 mb-3">
+            <div class="col-6">
+              <button class="btn btn-secondary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAddtnlSearch" aria-expanded="false" aria-controls="collapseAddtnlSearch">
+                <i class="bi bi-plus-slash-minus"></i> <%=i18n.btnMoreCriteria%>
+              </button>
+            </div>
+            <div class="col-6 text-end">
+              <button class="btn btn-secondary btn-sm pull-right" type="button" id="btnClear"><i class="bi bi-x-octagon"></i> <%=i18n.btnClear%></button>
+            </div>
+          </div>
+          <div class="row mt-3 mb-3">
+            <div class="col-12">
+              <button class="btn btn-success btn-lg" type="submit"><i class="bi bi-search"></i> <%=i18n.btnSearch%></button>
+            </div>
+          </div>
+
+        </div> 
+      </form>
+
+      <hr>
+
+      <div class="collapse" id="resultDiv">
+        <table class="table table-striped table-hover" id="resultTable"></table>
+        <div id="tooManyResults"></div>
+      </div>
+
+
+      <hr>
+      <p class="appFooter text-muted">
+        <%=i18n.appTitle%> on <a href="https://github.com/sheppoor/tamescripts">GitHub</a>. 
+        <%=i18n.footerLicense%> <a href="https://www.mozilla.org/en-US/MPL/2.0/">Mozilla Public License, v. 2.0</a><br>
+        <%=i18n.footerCommercial%> <a href="https://tamescripts.com/">tamescripts.com</a><br>
+        <%=i18n.footerOtherCopy%>
+        <%=i18n.footerDisclaimer%><br>
+      </p>
+
+    </div>
+
+
+    <div class="modal" id="modalHelp" tabindex="-1" aria-hidden="true">
+      <!-- content loaded in JS to allow for future differing DB engine help content -->
+    </div>
+    
+
+    <div class="modal fade" id="modalAdd" tabindex="-1" aria-labelledby="modalAddLabel" aria-hidden="true" data-bs-backdrop="static">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+    
+
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalAddLabel"><%=i18n.modalAddTitle%></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <div class="modal-body">
+            <div class="page-prompt"><%=i18n.modalAddPrompt%></div>
+
+            <div class="container">
+              <div class="file-select-drop-area" id="drop-area">
+                <p class="mt-1 mb-1"><%=i18n.modalAddDragAndDropPrompt%></p>
+                <input type="button" class="btn btn-secondary btn-sm" onclick="document.getElementById('file-selector').click()" value="<%=i18n.modalAddBtnSelectFile%>"></button>
+                <input class="hide" type="file" id="file-selector" accept=".vtt">
+              </div>
+            </div>
+              
+            <form class="needs-validation" id="formAddTranscript" novalidate>
+
+            <div class="mb-3">
+              <label for="addMeetingName" class="col-form-label"><%=i18n.modalAddFieldMeetingName%>:</label>
+              <input type="text" class="form-control" id="addMeetingName" name="addMeetingName" maxlength="200" autocomplete="off" required>
+            </div>
+      
+            <div class="form-row mb-2">
+              <div class="col-3">
+                <label for="addMeetingDt" class="col-form-label"><%=i18n.modalAddFieldMeetingDt%>:</label>
+                <div class="input-group mr-sm-2" >
+                  <input type="text" class="datepicker_input form-control" id="addMeetingDt" name="addMeetingDt" required>
+                  <i class="bi bi-calendar-date input-group-text" id="addMeetingDtIcon"></i>
+                </div>
+              </div>  
+            </div>
+      
+            <div class="mb-3">
+              <label for="addMeetingVtt" class="col-form-label"><%=i18n.modalAddFieldMeetingVtt%>:</label>
+              <textarea rows="5" class="form-control" id="addMeetingVtt" name="addMeetingVtt" required></textarea>
+            </div>
+
+<!--
+            <div>
+              <label for="addTag" class="col-form-label">Tag:</label>
+              <input type="text" class="form-control" id="addTag" maxlength="40">
+            </div>
+
+            <div>
+              <label for="addAltTag" class="col-form-label">Alternate Tag:</label>
+              <input type="text" class="form-control" id="addAltTag" maxlength="40">
+            </div>
+
+            <div>
+              <label for="addOther" class="col-form-label">Other Information:</label>
+              <input type="text" class="form-control" id="addOther" maxlength="200">
+            </div>
+
+            <div>
+              <label for="addOrganizer" class="col-form-label">Meeting organizer:</label>
+              <input type="text" class="form-control" id="addOrganizer" maxlength="50">
+            </div>
+
+            <div>
+              <label for="addRecordedBy" class="col-form-label">Meeting recorded by:</label>
+              <input type="text" class="form-control" id="addRecordedBy" maxlength="50">
+            </div>
+
+            <div>
+              <label for="addAttendiesRequired" class="col-form-label">Attendees (required):</label>
+              <input type="text" class="form-control" id="addAttendiesRequired">
+            </div>
+
+            <div>
+              <label for="addAttendiesOptional" class="col-form-label">Attendees (optional):</label>
+              <input type="text" class="form-control" id="addAttendiesOptional">
+            </div>
+-->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" id="btnAddCancel"><%=i18n.btnCancel%></button>
+            
+            <button type="submit" class="btn btn-success"><%=i18n.modalAddBtnAdd%></button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+      </div>
+    </div>
+
+
+    <div class="modal fade" id="modalList" tabindex="-1" aria-labelledby="modalListLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalListLabel"><%=i18n.modalListTitle%></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3"><%=i18n.modalListPrompt%></div>
+            <table class="table table-striped table-hover" id="transcriptsTable"></table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><%=i18n.btnClose%></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="modal fade" id="modalTranscript" tabindex="-1" aria-labelledby="modalTranscriptLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalTranscriptLabel"><%=i18n.modalTranscriptTitle%></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+
+            <div class="row">
+              <div class="col-6">
+                <div class=""><strong><%=i18n.modalTranscriptSectionMeeting%></strong></div>
+              </div>
+              <div class="col-6 text-end">
+                <!--
+                  // For future features
+                  <button type="button" class="btn btn-secondary btn-sm pull-right"><i class="bi bi-three-dots"></i></button>
+                -->
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-2 text-end"><%=i18n.modalTranscriptLabelTitle%></div>
+              <div class="col-10"><strong id="modalTranscriptTitle">-</strong></div>
+            </div>
+            <div class="row">
+              <div class="col-2 text-end"><%=i18n.modalTranscriptLabelDate%></div>
+              <div class="col-10"><strong id="modalTranscriptDate">-</strong></div>
+            </div>
+
+            <table class="table table-striped table-hover ml-4 mr-3 transcript-tight" id="transcriptTable"></table>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><%=i18n.btnClose%></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module">
+      import {DataTable} from "/simple-datatables/dist/module.js"
+
+      const renderTranscriptWithHighlight = function(data, _cell, _dataIndex, _cellIndex) {
+        // TODO Highlights should only be calculated once per render, not for each row in the render.
+        // TODO Ideally it would create a vector of RegEx's too, not just strings.
+        // TODO Break out the highlighting into it's own fn
+        const highlights = document.getElementById("formSearchPhrase").value
+          .replace(/[\"'.,\/#!$%\^&;:{}=_`~]/g," ")
+          .split(/[-+*() ]/)
+          .filter(function(entry) { return /\S/.test(entry); });
+        var displayString = data[0];
+        for (const highlight in highlights) {
+          const highlightRegex = new RegExp(highlights[highlight], 'gi');
+          displayString = displayString.replace(highlightRegex, '<span class="search-highlight">'+highlights[highlight].toUpperCase()+'</span>');
+        }        
+        return(displayString);
+      }
+
+      const renderTranscriptWithHighlightNoHyperlink = function(data, _cell, _dataIndex, _cellIndex) {
+        return("<span >"+renderTranscriptWithHighlight(data, _cell, _dataIndex, _cellIndex)+"</span>");
+      }
+
+      const renderTranscriptWithHighlightHyperlink = function(data, _cell, _dataIndex, _cellIndex) {
+        return(renderTranscriptWithHighlight(data, _cell, _dataIndex, _cellIndex));
+      }
+
+      window.dtResultTable = new DataTable("#resultTable", {
+          perPageSelect: [5, 10, 100, ["<%=i18n.generalAll%>", -1]],
+          perPage: 5, // override default of 10
+          firstLast: true,
+          columns: [
+              {
+                  select: 0,
+                  hidden: true,
+              },
+              {
+                  select: 1,
+                  hidden: true,
+              },
+              {
+                  select: 3,
+                  type: "date",
+                  format: "mm/dd/yyyy"
+              },
+              {
+                  select: 5,
+                  render: renderTranscriptWithHighlightHyperlink
+              }
+          ],
+          labels: {
+              placeholder: "<%=i18n.generalFilterPlaceholder%>",
+              searchTitle: "",
+              perPage: " <%=i18n.generalPerPage%>",
+              noRows: "<%=i18n.generalNoSearchResults%>",
+              info: "{start} - {end} of {rows}",
+              noResults: "",    // "No filter results"
+          },
+          data: {
+              "headings": [
+                "Meeting ID",
+                "Sequence",
+                "<%=i18n.colResultsMeeting%>",
+                "<%=i18n.colResultsDate%>",
+                "<%=i18n.colResultsSpeaker%>",
+                "<%=i18n.colResultsText%>",
+                "<%=i18n.colResultsCue%>",
+              ],
+            }
+      });
+
+      dtResultTable.on("datatable.selectrow", (rowIndex, event) => {
+        event.preventDefault();
+        const meetingId = dtResultTable.data.data[rowIndex][0].text;
+        const seq = dtResultTable.data.data[rowIndex][1].text;
+        console.log(meetingId);
+        console.log(seq);
+        populateTranscriptModal(meetingId, document.getElementById("formSearchPhrase"), seq);
+        modalTranscriptBootstrapModal.show();
+        // TODO: This technique isn't working, probably because it's inside a modal. Come back to it in a bit.
+        // Probably best to redo: after modal show complete, scroll down to seq location.
+        let newHref = window.location.href;
+        if (newHref.includes("#")) {
+          newHref = newHref.slice(0, newHref.lastIndexOf("#"));
+        }
+        window.location.href = newHref+"#"+"transcriptSeq_"+seq;
+      });
+
+      window.dtTranscriptsTable = new DataTable("#transcriptsTable", {
+          perPageSelect: false,
+          sortable: false,
+          columns: [
+              {
+                  select: 0,
+                  hidden: true,
+              },
+              {
+                  select: 1,
+                  type: "date",
+                  format: "mm/dd/yyyy"
+              },
+          ],
+          labels: {
+              placeholder: "Filter transcript meetings ...",
+              searchTitle: "",
+              noRows: "No meetings loaded yet",
+              info: "{rows} transcripts",
+              noResults: "",    // "No filter results"
+          },
+          data: {
+              "headings": [
+                "Meeting ID",
+                "<%=i18n.modalListColDateTime%>",
+                "<%=i18n.modalListColName%>",
+                "<%=i18n.modalListColTranscript%>",
+              ],
+          },
+      });
+
+      dtTranscriptsTable.on("datatable.selectrow", (rowIndex, event) => {
+        event.preventDefault();
+        const meetingId = dtTranscriptsTable.data.data[rowIndex][0].text;
+        modalListBootstrapModal.hide();
+        populateTranscriptModal(meetingId);
+        modalTranscriptBootstrapModal.show();
+      });
+
+
+      window.dtTranscriptTable = new DataTable("#transcriptTable", {
+          paging: false,
+          sortable: false,
+          columns: [
+              {
+                  select: 1,
+                  render: renderTranscriptWithHighlightNoHyperlink
+              }
+          ],
+          labels: {
+              placeholder: "<%=i18n.generalFilterPlaceholder%>",
+              searchTitle: "",
+              perPage: " <%=i18n.generalPerPage%>",
+              noRows: "<%=i18n.generalNoSearchResults%>",
+              info: "{start} - {end} of {rows}",
+              noResults: "",    // "No filter results"
+          },
+          data: {
+              "headings": [
+                "<%=i18n.colResultsSpeaker%>",
+                "<%=i18n.colResultsText%>",
+                "<%=i18n.colResultsCue%>",
+              ],
+            }
+      });
+
+    </script>
+
+
+    <script type="text/javascript" src="/resources/js/lightdarktoggle.js" ></script>
+    <script type="text/javascript" src="/resources/js/tamescripts.js" ></script>
+    <script type="text/javascript" src="/resources/js/help.js" ></script>
+    <script type="text/javascript" src="/bootstrap/js/bootstrap.bundle.min.js" ></script>
+    <script type="text/javascript" src="/vanillajs-datepicker/js/datepicker.js"></script>
+  </body>
+</html>

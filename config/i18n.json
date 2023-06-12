@@ -1,0 +1,172 @@
+[ {
+    "lang": "en", 
+    "name": "English",
+    "terms": {
+        "appTitle": "Tamescripts",
+        "appSubtitle": "Grok all your meeting transcripts",
+        "appDesc": "A Microsoft Teams meeting can record a transcript which can be downloaded as a WebVTT (.vtt) file. Use this tool to index and search across all your team's transcripts for critical information that might otherwise be forgotten and lost.",
+
+        "statsTranscripts": "Uploaded transcripts",
+        "statsTextLines": "Text lines indexed",
+
+        "searchCriteriaTitle": "Search Criteria",
+        "searchPhraseLabel": "Search phrase",
+        "searchPhrasePlaceholder": "Word or phrase in quotes, case insensitive",
+        "searchSpeakerLabel": "As said by",
+        "searchDateLabel": "Meeting date",
+        "searchTagLabel": "Meeting tag",
+        "searchParticipantsLabel": "Participants",
+        "searchTitleLabel": "Meeting title",
+        "searchTimeLabel": "Time in meeting",
+        "searchOptionsLabel": "Options",
+
+        "btnAddTranscript": "Add a Transcript",
+        "btnListTranscripts": "List Transcripts",
+        "btnSearch": "Search",
+        "btnMoreCriteria": "Show Additional Search Criteria",
+        "btnClear": "Clear",
+        "btnCancel": "Cancel",
+        "btnClose": "Close",
+
+        "colResultsMeeting": "Meeting",
+        "colResultsDate": "Date",
+        "colResultsSpeaker": "Speaker",
+        "colResultsText": "Text",
+        "colResultsCue": "Cue",
+
+        "modalAddTitle": "Add a Transcript",
+        "modalAddPrompt": "Add the basic information - meeting name, date, and the contents of the Teams transcript. The easiest way is to drag-and-drop a .vtt file.",
+        "modalAddDragAndDropPrompt": "Drag-and-Drop Here or",
+        "modalAddBtnSelectFile": "Select a File",
+        "modalAddFieldMeetingDt": "Meeting date",
+        "modalAddFieldMeetingName": "Meeting name",
+        "modalAddFieldMeetingVtt": "Transcript file contents",
+        "modalAddBtnAdd": "Add Transcript",
+
+        "modalListTitle": "List Transcripts",
+        "modalListPrompt": "Click a meeting name to review the meeting details and to see the full transcript.",
+        "modalListColDateTime": "Date",
+        "modalListColName": "Meeting Name",
+        "modalListColTranscript": "Transcript",
+
+        "modalTranscriptTitle": "Transcript",
+        "modalTranscriptSectionMeeting": "Meeting Details",
+        "modalTranscriptLabelTitle": "Title",
+        "modalTranscriptLabelDate": "Date",
+
+        "generalAll": "All",
+        "generalPerPage": "per page",
+        "generalFilterPlaceholder": "Filter within search results ...",
+        "generalNoSearchResults": "No search results",
+
+        "footerLicense": "Licensed under the",
+        "footerCommercial": "Commercial licenses and SAAS solutions available at ",
+        "footerOtherCopy": "Microsoft Teams is Copyright Microsoft Corporation.",
+        "footerDisclaimer": "Tamescripts is not in any way affiliated with Microsoft or MS Teams."
+        }
+    },
+    {
+    "lang": "es", 
+    "name": "Spanish",
+    "terms": {
+        "appTitle": "Tamescripts",
+        "appSubtitle": "Grok todas las transcripciones de sus reuniones",
+        "appDesc": "Una reunión de Microsoft Teams puede grabar una transcripción que se puede descargar como un archivo WebVTT (.vtt). Use esta herramienta para cargar sus archivos de transcripción, indexarlos y buscar en todas sus transcripciones información crítica que de otro modo podría olvidarse y perderse .",
+
+        "statsTranscripts": "Transcripciones cargadas",
+        "statsTextLines": "Líneas de texto indexadas",
+
+        "searchCirteriaTitle": "Criterio de búsqueda",
+        "searchPhraseLabel": "Frase de búsqueda",
+        "searchPhrasePlaceholder": "Palabra o frase parcial, mayúsculas y minúsculas",
+        "searchSpeakerLabel": "Como dijo",
+        "searchDateLabel": "Fecha de la reunión",
+        "searchTagLabel": "Etiqueta de reunión",
+        "searchParticipantsLabel": "Participantes de la reunión",
+        "searchTitleLabel": "Título de la reunión",
+        "searchTimeLabel": "Tiempo dentro de la reunión",
+
+        "btnAddTranscript": "Agregar una transcripción",
+        "btnListTranscripts": "Lista de Transcripción Cargada",
+        "btnSearch": "Buscar",
+        "btnMoreCriteria": "Mostrar criterios de búsqueda adicionales",
+        "btnClear": "Claro",
+        "btnCancel": "Cancelar",
+        "btnClose": "Cerca",
+        
+        "colResultsMeeting": "Reunión",
+        "colResultsDate": "Fecha",
+        "colResultsSpeaker": "Vocero",
+        "colResultsText": "Texto",
+        "colResultsCue": "Señal",
+
+        "modalAddTitle": "Agregar una transcripción",
+        "modalAddPrompt": "Agregue la información básica de la reunión. Por ahora, el contenido del archivo .VTT debe pegarse en el área de texto a continuación.",
+        "modalAddFieldMeetingDt": "Fecha de la reunión",
+        "modalAddFieldMeetingName": "Nombre de la reunión",
+        "modalAddFieldMeetingVtt": "Contenido del archivo de transcripción",
+        "modalAddBtnAdd": "Añadir Transcripción",
+
+        "modalListTitle": "Lista de transcripciones",
+        "modalListPrompt": "Haga clic en el nombre de una reunión para revisar y editar los detalles. Haga clic en la transcripción para ver el texto completo. Haga clic en el enlace del video para ver la reunión mientras lee la transcripción.",
+        "modalListColDateTime": "Fecha y hora",
+        "modalListColName": "Nombre de la reunión",
+        "modalListColTranscript": "Transcripción",
+
+        "footerLicense": "Licencia bajo el",
+        "footerCommercial": "licencias comerciales disponibles"
+        }
+    },    
+    {
+        "lang": "fr", 
+        "name": "French",
+        "terms": {
+            "appTitle": "Tamescripts",
+            "appSubtitle": "Grok toutes vos transcriptions de réunion",
+            "appDesc": "Une réunion Microsoft Teams peut enregistrer une transcription qui peut être téléchargée sous forme de fichier WebVTT (.vtt). Utilisez cet outil pour télécharger vos fichiers de transcription, les indexer et rechercher dans toutes vos transcriptions des informations critiques qui pourraient autrement être oubliées et perdues.",
+    
+            "statsTranscripts": "Transcriptions téléchargées",
+            "statsTextLines": "Lignes de texte indexées",
+    
+            "searchCirteriaTitle": "Critères de recherche",
+            "searchPhraseLabel": "Expression de recherche",
+            "searchPhrasePlaceholder": "Mot ou phrase partielle, insensible à la casse",
+            "searchSpeakerLabel": "Comme dit par",
+            "searchDateLabel": "Date de la réunion",
+            "searchTagLabel": "Balise de réunion",
+            "searchParticipantsLabel": "Participants à la réunion",
+            "searchTitleLabel": "Titre de la réunion",
+            "searchTimeLabel": "Temps dans la réunion",
+    
+            "btnAddTranscript": "Ajouter une transcription",
+            "btnListTranscripts": "Liste des transcriptions chargées",
+            "btnSearch": "Recherche",
+            "btnMoreCriteria": "Afficher les critères de recherche supplémentaires",
+            "btnClear": "Clair",
+            "btnCancel": "Annuler",
+            "btnClose": "Fermer",
+    
+            "colResultsMeeting": "Réunion",
+            "colResultsDate": "Date",
+            "colResultsSpeaker": "Conférencier",
+            "colResultsText": "Texte",
+            "colResultsCue": "Signal",
+    
+            "modalAddTitle": "Ajouter une transcription",
+            "modalAddPrompt": "Ajoutez les informations de base sur la réunion. Pour l'instant, le contenu du fichier .VTT doit être collé dans la zone de texte ci-dessous.",
+            "modalAddFieldMeetingDt": "Date de la réunion",
+            "modalAddFieldMeetingName": "Nom de la réunion",
+            "modalAddFieldMeetingVtt": "Contenu du fichier de transcription",
+            "modalAddBtnAdd": "Ajouter une transcription",
+    
+            "modalListTitle": "Liste des transcriptions",
+            "modalListPrompt": "Cliquez sur le nom d'une réunion pour revoir et modifier les détails. Cliquez sur la transcription pour voir le texte intégral. Cliquez sur le lien vidéo pour regarder la réunion tout en lisant la transcription.",
+            "modalListColDateTime": "Date et heure",
+            "modalListColName": "Nom de la réunion",
+            "modalListColTranscript": "Transcription",
+    
+            "footerLicense": "Licence",
+            "footerCommercial": "licences commerciales disponibles"
+            }
+    }
+    ]

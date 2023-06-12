@@ -1,0 +1,75 @@
+/* =============== General App Styling ================= */
+
+/* Modals are too boring. Give them some minimal spice, at least with a header */
+.modal-header {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* The page content is too uniform. Distinguish the form labels a bit from other text. */
+.form-label {
+  font-size: 1.2rem;
+}
+
+.page-prompt {
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+/* =============== Help Screen ================= */
+
+/* Help next to the search phrase - make it big / stand out */
+.help-icon {
+  font-size: 1.3rem;
+}
+.help-btn {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.helpTableRow:hover {
+  font-style: italic;
+  font-weight: bold;
+}
+
+.sample-help-row {
+  border-width: 2px !important;
+  border-color: #333;
+}
+
+.sample-help-row-highlight > td {
+  background-color: #ffc107 !important;
+  z-index: 2000;
+}
+
+
+/* =============== Search results in tables ================= */
+
+.search-highlight {
+  background-color: #ee6;
+}
+
+.transcript-tight td {
+  padding-top: 1px !important;
+  padding-bottom: 1px !important;
+}
+
+
+/* =============== Other specific use cases ================= */
+
+.file-select-drop-area {
+  border: 4px solid #79f;
+  color: #559;
+  font-weight:bold;
+  margin: 1rem 0;
+  width: 220px;
+  text-align: center;
+  min-height: 80px !important;
+  min-width: 250px !important;
+  padding: 2px !important;
+}
+
+.hide {
+  visibility:hidden;
+  display: none;
+}

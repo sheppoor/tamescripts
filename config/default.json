@@ -1,0 +1,17 @@
+{
+"app": {
+    "port": 3000, 
+    "name": "Tamescripts",
+    "lang": "en",
+    "dateformat": "mm/dd/yyyy",
+    "rdbms": "SQLite"
+  },
+"dbConfigMariaDB": {
+  },
+"dbConfigSQLite": {
+  },
+"dbConfigMSSQLServer": {
+  },
+"dbConfigOracle": {
+  }
+}
