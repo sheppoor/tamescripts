@@ -12,6 +12,7 @@ const fs = require('fs');
 
 let i18n={}; // All i18n text. As loaded from file, then backfilled with missing terms.
 const languageList = []; // Dropdown list of languages
+const langCodes = []; // Ordered list of codes 'en', etc.
 
 
 // Load languages and their terms (strings used in the app) from a JSON file.
@@ -56,6 +57,7 @@ function loadLanguageList() {
       languageCode: language.lang,
       languageName: language.name };
     languageList.push(entry);
+    langCodes.push(language.lang);
   }
 }
 
@@ -64,7 +66,6 @@ function loadLanguageList() {
 function getLanguages() {
   return languageList;
 }
-
 
 // Gets language terms for the currently chosen language, used for basically all text display
 function getTerms(requestLang) {
@@ -83,8 +84,26 @@ function getTerms(requestLang) {
 }
 
 
+// Determine the client's preferred language based on client cookie "site.lang" and header "accept-language"
+function resolveLang(cookie, headerLangStr) {
+  let lang = "en"; // Fallback of "en" if: no lang cookie, missing accept-language, *, or unknown first 2 chars language.
+  if (cookie.indexOf("site.lang=") >= 0) {
+    lang = cookie.substr(cookie.indexOf("site.lang=")+10, 2);
+  } else {
+    if ((headerLangStr!==undefined) && (headerLangStr!=="*")) {
+      const headerLang = headerLangStr.slice(0, 2);
+      if (langCodes.includes(headerLang)) {
+        lang = headerLang;
+      }
+    }
+  }
+  return lang;
+}
+
+
 module.exports = {
   load,
   getLanguages,
   getTerms,
+  resolveLang,
 };

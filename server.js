@@ -54,8 +54,8 @@ app.listen(config.app.port, () => {
 
 // Capture all traffic, no 404s
 app.get("/*", (req, res) => {
-  // TODO: Currently hardwired to english
-  res.render("index", { "i18n": i18n.getTerms('en') } );
+  const lang = i18n.resolveLang(req.headers['cookie'], req.headers['accept-language']);
+  res.render("index", { "i18n": i18n.getTerms(lang), "lang": lang, "languages": i18n.getLanguages() } );
 });
 
 // TODO: Figure out why req.body doesn't work from express.Router(). Move to router.js
@@ -68,4 +68,5 @@ app.post("/add", (req, res) => {
 app.post("/search", (req, res) => {
   const { formSearchPhrase, formSearchSpeaker } = req.body;
   ttController.search(formSearchPhrase, formSearchSpeaker, res);
+  console.log("Search for text "+formSearchPhrase);
 });

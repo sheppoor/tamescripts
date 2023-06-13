@@ -158,6 +158,20 @@ function showAlert(alertMessage, alertType) {
 }
 
 
+// ----------------- i18n dropdown ---------------------
+
+(function() {
+  const elems = document.querySelectorAll('.choose-language');
+  for (const elem of elems) {
+    elem.onclick = function(event) {
+      document.cookie = "site.lang="+elem.getAttribute("data-lang")+"; samesite=strict";
+      window.location.reload();
+    };
+  };
+})();
+
+
+
 // ----------------- Add transcript page ---------------------
 
 const modalAdd = document.getElementById('modalAdd');

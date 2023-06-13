@@ -1,3 +1,10 @@
+# Additions to the template
+*.sqlite
+config/default.json
+development/
+.eslintrc.js
+.vscode/
+
 # Logs
 logs
 *.log

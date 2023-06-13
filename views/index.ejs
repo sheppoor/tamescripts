@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<%=lang%>">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,8 +13,6 @@
     <link rel="shortcut icon" href="/resources/images/favicon.ico" />
   </head>
 
-
-
   <body onload="startup()">
     <div class="container mt-4">
 
@@ -24,6 +22,19 @@
           </div>
           <div class="col-3">
             <div class="float-end mt-2">
+
+              <div class="btn-group">
+                <button type="button" class="btn px-1 py-0 btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  <%=lang%>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end py-0" style="min-width: 50px;">
+                  <% languages.forEach(function(language){ %>
+                    <li><button class="dropdown-item choose-language px-3 py-0" data-lang="<%=language.languageCode%>" type="button">
+                      <strong><%=language.languageCode%></strong> - <%=language.languageName%></button></li>
+                  <% }); %>
+                </ul>
+              </div>
+
             <button class="btn btn-secondary px-1 py-0 lightdarktoggle">
               <i class="bi bi-sun-fill"></i> <i class="bi bi-moon"></i>
             </button>
@@ -468,7 +479,6 @@
       });
 
     </script>
-
 
     <script type="text/javascript" src="/resources/js/lightdarktoggle.js" ></script>
     <script type="text/javascript" src="/resources/js/tamescripts.js" ></script>
