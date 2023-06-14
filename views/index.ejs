@@ -86,7 +86,7 @@
           <div class="row">
             <label class="form-label col-2" for="formSearchSpeaker"><%=i18n.searchSpeakerLabel%></label>
             <div class="col-5">
-              <input class="form-control" list="speakerDataList" id="formSearchSpeaker" name="formSearchSpeaker" placeholder="Start typing, choose from dropdown" autocomplete="off">
+              <input class="form-control" list="speakerDataList" id="formSearchSpeaker" name="formSearchSpeaker" placeholder="<%=i18n.searchSpeakerPlaceholder%>" autocomplete="off">
               <datalist id="speakerDataList" class="datalisthere">
                 <!-- Options added in the JS below, based on distinct speakers -->
               </datalist>
@@ -427,10 +427,10 @@
               },
           ],
           labels: {
-              placeholder: "Filter transcript meetings ...",
+              placeholder: "<%=i18n.modalListFilterPlaceholder%>",
               searchTitle: "",
-              noRows: "No meetings loaded yet",
-              info: "{rows} transcripts",
+              noRows: "<%i18n.modalListMsgNoData%>",
+              info: "{rows} <%=i18n.modalListCountSuffix%>",
               noResults: "",    // "No filter results"
           },
           data: {
