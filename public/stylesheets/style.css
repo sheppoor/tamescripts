@@ -73,3 +73,8 @@
   visibility:hidden;
   display: none;
 }
+
+/* Make the standard bootstrap icon look kinda like the sharepoint video player */
+.bi-person-video2::before {
+  transform: scale(1,-1) rotate(180deg);
+}

@@ -2,7 +2,7 @@
 
 *Grok all your meeting transcripts*
 
-**NOTE: These are early days. It is mostly functional but will likely go through breaking changes prior to version 1.0.**
+**NOTE: These are early days. It is working but will likely go through breaking changes prior to version 1.0.**
 
 When you record a Microsoft Teams meeting a transcript can also be created.
 You can download the transcript as a WebVTT .VTT file, but it is difficult to
@@ -28,24 +28,24 @@ that might otherwise be forgotten and lost.
 - Open a terminal (command prompt) in the new tamescripts directory
 - Type `npm install` to download the necessary dependencies
 - Type `npm start` to start tamescripts
-- browse to http://localhost:3000
+- browse to <http://localhost:3000>
 
 You can edit `/config/default.json` to change the port number and several other parameters.
 
-The first time you run it will create a SQLite database for you in the tamescripts directory. This can be backed up and copied/moved as needed.
+The first time you run it will create a SQLite database for you in the tamescripts directory.
+This can be backed up and copied/moved as needed.
 
 ## Demo
 
 You can try a it online [TBD here TBD](tbd).
 
-The demo contains two short transcripts on topic (TBD). Try some searches such as
+The demo contains two short transcripts (TBD). Try some searches such as
 
 - example 1
 - example 2
 - example 3
 
-You will not be able to load additional transcript in the demo, it's a shared
-public page and others would be able to see your transcript data.
+You will not be able to load additional transcript in the demo as it's a shared public demo.
 
 ## Origin story
 
@@ -74,12 +74,12 @@ It is in pre-1.0 release, the final feature set and the roadmap are likely
 to change. With that said, here's the high-level plan:
 
 - Many features to come based on real world use and feedback, including
-  - better cell or row hotspots for drilldown clicking
+  - ~~Better cell or row hotspots for drilldown clicking~~
   - Delete/remove transcript
   - Word/phrase frequency search by meeting
   - Feedback warning before adding a transcript already added
 - Continue to refactor
-- ~~Improvements to setup process~~ (I think it's clean enough for now)
+- ~~Improvements to setup process~~
 - Officially release version 1.0
 
 ## Technology stack
@@ -90,7 +90,7 @@ Written to be light weight with a minimum npm footprint, it includes:
 
 - express & ejs - web service and page logic
 - bootstrap & bootstrap icons - consistent front end structure and CSS
-- mySql *or* SQLite - persistance, fast full text indexing and searching
+- SQLite - persistance, full text indexing and searching
 - config - all configuration in a single json file
 - simple-datatables - simple and interactive html tables
 - vanillajs-datepicker - clean date picker without framework lock-in
@@ -99,10 +99,7 @@ There is no dependence on React, Vue, Angular, or even jQuery.
 
 ## Copyright and license
 
-Dual licensed under both Mozilla Public License 2.0 and commercial licenses.
-
-Copyright the [Authors](https://github.com/sheppoor/tamescripts/graphs/contributors),
-released under the [MPL 2.0 License](https://github.com/sheppoor/tamescripts/LICENSE).
+Dual licensed under both [Mozilla Public License 2.0](https://github.com/sheppoor/tamescripts/LICENSE) and commercial licenses.
 
 Contact the maintainer for commercial license options.
 

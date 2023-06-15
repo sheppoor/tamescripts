@@ -54,9 +54,6 @@
         "modalListCountSuffix": "transcripts",
 
         "modalTranscriptTitle": "Transcript",
-        "modalTranscriptSectionMeeting": "Meeting Details",
-        "modalTranscriptLabelTitle": "Title",
-        "modalTranscriptLabelDate": "Date",
 
         "generalAll": "All",
         "generalPerPage": "per page",
@@ -125,9 +122,6 @@
         "modalListCountSuffix": "transcripciones",
 
         "modalTranscriptTitle": "Transcripción",
-        "modalTranscriptSectionMeeting": "Detalles de la reunión",
-        "modalTranscriptLabelTitle": "Título",
-        "modalTranscriptLabelDate": "Fecha",
 
         "generalAll": "Todos",
         "generalPerPage": "por página",
@@ -196,9 +190,6 @@
             "modalListCountSuffix": "transcriptions",
    
             "modalTranscriptTitle": "Transcription",
-            "modalTranscriptSectionMeeting": "Détails de la réunion",
-            "modalTranscriptLabelTitle": "Titre",
-            "modalTranscriptLabelDate": "Date",
    
             "generalAll": "Tous",
             "generalPerPage": "par page",
@@ -267,9 +258,6 @@
             "modalListCountSuffix": "成绩单",
    
             "modalTranscriptTitle": "成绩单",
-            "modalTranscriptSectionMeeting": "会议详情",
-            "modalTranscriptLabelTitle": "标题",
-            "modalTranscriptLabelDate": "日期",
    
             "generalAll": "全部",
             "generalPerPage": "每页",
@@ -337,9 +325,6 @@
             "modalListCountSuffix": "النصوص",
    
             "modalTranscriptTitle": "نسخة",
-            "modalTranscriptSectionMeeting": "تفاصيل الاجتماع",
-            "modalTranscriptLabelTitle": "العنوان",
-            "modalTranscriptLabelDate": "التاريخ",
    
             "generalAll": "All",
             "generalPerPage": "لكل صفحة",

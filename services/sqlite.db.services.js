@@ -215,7 +215,7 @@ function add(addMeetingDt, addMeetingName, addMeetingVtt, res) {
               });
             });
       }
-      console.log("Added meeting "+meetingId+" with "+(vttData.length)+" transcript lines");
+      console.log("Added meeting "+addMeetingName+" id="+meetingId+" with "+(vttData.length)+" transcript lines");
       res.status(200).send({ });
     });
   });
