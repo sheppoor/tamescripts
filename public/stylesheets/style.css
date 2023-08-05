@@ -13,7 +13,11 @@
 
 .page-prompt {
   font-size: 1.1rem;
-  font-style: italic;
+}
+
+
+.appFooter {
+  font-size: 0.85rem;
 }
 
 /* =============== Help Screen ================= */

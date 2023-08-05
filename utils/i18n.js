@@ -87,7 +87,7 @@ function getTerms(requestLang) {
 // Determine the client's preferred language based on client cookie "site.lang" and header "accept-language"
 function resolveLang(cookie, headerLangStr) {
   let lang = "en"; // Fallback of "en" if: no lang cookie, missing accept-language, *, or unknown first 2 chars language.
-  if (cookie.indexOf("site.lang=") >= 0) {
+  if ((cookie != null) && (cookie.indexOf("site.lang=") >= 0)) {
     lang = cookie.substr(cookie.indexOf("site.lang=")+10, 2);
   } else {
     if ((headerLangStr!==undefined) && (headerLangStr!=="*")) {

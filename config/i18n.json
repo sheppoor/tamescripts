@@ -54,6 +54,7 @@
         "modalListCountSuffix": "transcripts",
 
         "modalTranscriptTitle": "Transcript",
+        "modalTranscriptFilterPlaceholder": "Filter within transcript ...",
 
         "generalAll": "All",
         "generalPerPage": "per page",

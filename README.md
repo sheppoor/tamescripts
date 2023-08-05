@@ -11,7 +11,7 @@ Use this tool to parse and index your transcript files,
 and then search across all your transcripts for critical information
 that might otherwise be forgotten and lost.
 
-[Picture to be added]
+![Screenshot](./screenshot.png)
 
 ## Key Features
 
