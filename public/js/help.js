@@ -18,8 +18,14 @@ async function setupHelp() {
     helpTableRow.addEventListener("mouseover", (event) => {
       helpSetHighlights(helpTableRow.dataset.highlights);
     });
+    helpTableRow.addEventListener("mouseout", (event) => {
+      helpClearHighlights();
+    });
   };
-  // Design choice: didn't add mouseout event.
+
+  document.getElementById('modalHelp').addEventListener('hidden.bs.modal', function(event) {
+    resetFocus();
+  });
 }
 
 function helpSetHighlights(highlights) {
@@ -33,7 +39,6 @@ function helpSetHighlights(highlights) {
   }
 }
 
-// Not actually called, leave here for potential future use.
 function helpClearHighlights() {
   const helpSampleRows = document.querySelectorAll('.sample-help-row');
   for (const helpSampleRow of helpSampleRows) {

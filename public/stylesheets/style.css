@@ -31,14 +31,18 @@
   padding-bottom: 0 !important;
 }
 
-.helpTableRow:hover {
-  font-style: italic;
-  font-weight: bold;
+.helpTableRow:hover td {
+  background-color: #ccc !important;
 }
 
 .sample-help-row {
   border-width: 2px !important;
   border-color: #333;
+}
+
+.sample-help-row td, .helpTableRow td {
+  background-color: #fff !important;
+  color: #000 !important;
 }
 
 .sample-help-row-highlight > td {
