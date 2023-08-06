@@ -99,8 +99,21 @@
           <div class="collapse mt-2" id="collapseAddtnlSearch">
 
             <div class="row">
-              <label class="form-label col-2" for="formSearchDate"><%=i18n.searchDateLabel%></label>
-              <div class="col-10"><i>Two date pickers, default to blank, easy to clear</i></div>
+              <label class="form-label col-2" for="formSearchFromDt"><%=i18n.searchDateLabel%></label>
+
+              <div class="col-3">
+                <div class="input-group mr-sm-2">
+                  <input type="text" class="datepicker_history form-control" id="formSearchFromDt" name="formSearchFromDt"  autocomplete="off">
+                  <i class="bi bi-calendar-date input-group-text" id="formSearchFromDtIcon"></i>
+                  <i class="bi bi-x-square input-group-text" id="formSearchFromDtClear"></i>
+                </div>
+
+                <div class="input-group mr-sm-2">
+                  <input type="text" class="datepicker_history form-control" id="formSearchToDt" name="formSearchToDt"  autocomplete="off">
+                  <i class="bi bi-calendar-date input-group-text" id="formSearchToDtIcon"></i>
+                  <i class="bi bi-x-square input-group-text" id="formSearchToDtClear"></i>
+                </div>
+              </div>  
             </div>
 
             <div class="row">

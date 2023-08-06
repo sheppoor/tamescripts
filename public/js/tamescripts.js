@@ -34,6 +34,16 @@ function setupDatePickers() {
       todayButtonMode: 1,
       daysOfWeekHighlighted: [1, 2, 3, 4, 5],
       autohide: true,
+      todayHighlight: true,
+    });
+  }
+
+  const elems2 = document.querySelectorAll('.datepicker_history');
+  for (const elem of elems2) {
+    new Datepicker(elem, {
+      daysOfWeekHighlighted: [1, 2, 3, 4, 5],
+      autohide: true,
+      todayHighlight: true,
     });
   }
 }
@@ -157,6 +167,21 @@ function showAlert(alertMessage, alertType) {
   }, "3500");
 }
 
+// TODO redo as a listener?
+formSearchFromDtIcon.onclick = function(event) {
+  document.getElementById("formSearchFromDt").focus();
+};
+formSearchToDtIcon.onclick = function(event) {
+  document.getElementById("formSearchToDt").focus();
+};
+
+formSearchFromDtClear.onclick = function(event) {
+  document.getElementById("formSearchFromDt").value = "";
+};
+formSearchToDtClear.onclick = function(event) {
+  document.getElementById("formSearchToDt").value = "";
+};
+
 
 // ----------------- i18n dropdown ---------------------
 
@@ -182,8 +207,7 @@ function setupAddModal() {
   modalAddBootstrapModal = new bootstrap.Modal(modalAdd);
 };
 
-// TODO show should have a listener; it should also set the path.
-
+// TODO redo as a listener?
 addMeetingDtIcon.onclick = function(event) {
   document.getElementById("addMeetingDt").focus();
 };

@@ -14,7 +14,7 @@
         "searchPhrasePlaceholder": "Word or phrase in quotes, case insensitive",
         "searchSpeakerLabel": "As said by",
         "searchSpeakerPlaceholder": "Start typing, choose from dropdown",
-        "searchDateLabel": "Meeting date",
+        "searchDateLabel": "Meeting date range",
         "searchTagLabel": "Meeting tag",
         "searchParticipantsLabel": "Participants",
         "searchTitleLabel": "Meeting title",
