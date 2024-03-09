@@ -2,8 +2,6 @@
 
 *Grok all your meeting transcripts*
 
-**NOTE: These are early days. It is working but will likely go through breaking changes prior to version 1.0.**
-
 When you record a Microsoft Teams meeting a transcript can also be created.
 You can download the transcript as a WebVTT .VTT file, but it is difficult to
 work with directly, especially when you have tens or hundreds of them.
@@ -12,6 +10,8 @@ and then search across all your transcripts for critical information
 that might otherwise be forgotten and lost.
 
 ![Screenshot](./screenshot.png)
+
+**This tool is considered complete and will be updated for security issues only**
 
 ## Key Features
 
@@ -68,20 +68,6 @@ relevant in the first pass.
 But my needs might not match yours. Your feedback is essential to
 understanding what improvements our community needs.
 
-## Roadmap
-
-It is in pre-1.0 release, the final feature set and the roadmap are likely
-to change. With that said, here's the high-level plan:
-
-- Many features to come based on real world use and feedback, including
-  - ~~Better cell or row hotspots for drilldown clicking~~
-  - Delete/remove transcript
-  - Word/phrase frequency search by meeting
-  - Feedback warning before adding a transcript already added
-- Continue to refactor
-- ~~Improvements to setup process~~
-- Officially release version 1.0
-
 ## Technology stack
 
 Express.js, 100% JavaScript implementation with embedded HTML in the ejs files, and just a touch of custom CSS.
@@ -97,11 +83,21 @@ Written to be light weight with a minimum npm footprint, it includes:
 
 There is no dependence on React, Vue, Angular, or even jQuery.
 
+## Roadmap and
+
+The tool functions well for it's intended purpose, and although there are
+many potential enhancements, the effort doesn't match the demand at this time.
+
+## Known Issues
+
+- After about 100 meetings added, the Add process gets slow. After about 200
+it gets unbearably slow. This is due to the SQLite full text indexing.
+The search is still blazing fast, it's just the addition of meetings that requires patience.
+- There are several known UI quirks, but nothing that interferes with functionality.
+
 ## Copyright and license
 
 Dual licensed under both [Mozilla Public License 2.0](https://github.com/sheppoor/tamescripts/LICENSE) and commercial licenses.
-
-Contact the maintainer for commercial license options.
 
 Microsoft Teams is Copyright Microsoft Corporation.
 Tamescripts is not in any way affiliated with Microsoft or MS Teams.

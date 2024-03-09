@@ -95,7 +95,6 @@
           </div>
 
 
-
           <div class="collapse mt-2" id="collapseAddtnlSearch">
 
             <div class="row">
@@ -145,9 +144,11 @@
 
           <div class="row mt-3 mb-3">
             <div class="col-6">
+              <!--
               <button class="btn btn-secondary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAddtnlSearch" aria-expanded="false" aria-controls="collapseAddtnlSearch">
                 <i class="bi bi-plus-slash-minus"></i> <%=i18n.btnMoreCriteria%>
               </button>
+              -->
             </div>
             <div class="col-6 text-end">
               <button class="btn btn-secondary btn-sm pull-right" type="button" id="btnClear"><i class="bi bi-x-octagon"></i> <%=i18n.btnClear%></button>
@@ -174,7 +175,6 @@
       <p class="appFooter text-muted">
         <%=i18n.appTitle%> on <a href="https://github.com/sheppoor/tamescripts">GitHub</a>. 
         <%=i18n.footerLicense%> <a href="https://www.mozilla.org/en-US/MPL/2.0/">Mozilla Public License, v. 2.0</a><br>
-        <%=i18n.footerCommercial%> <a href="https://tamescripts.com/">tamescripts.com</a><br>
         <%=i18n.footerOtherCopy%>
         <%=i18n.footerDisclaimer%><br>
       </p>
@@ -310,9 +310,9 @@
           </div>
           <div class="modal-body">
 
+            <!--
             <div class="row">
               <div class="col-3">
-                <!-- TODO: needs wrapper, only show if we have video links available -->
                 <a href="#" data-bs-toggle="tooltip" data-bs-placement="right" title="Play this meeting video with synchronized transcript">
                   <i class="bi bi-person-video2 fs-2"></i>
                 </a>
@@ -325,7 +325,6 @@
                       <i class="bi bi-three-dots"></i>
                     </button>
                     <ul class="dropdown-menu py-1 px-1">
-                        <!-- TODO: All stubs for now, just testing the UI element -->
                         <li class="dropdown-item">Correct Transcript</li>
                         <li class="dropdown-item">Rename a Speaker</li>
                         <li class="dropdown-item">Delete Transcript</li>
@@ -333,11 +332,9 @@
                         <li class="dropdown-item">Others...</li>
                     </ul>
                   </div>
-    
-    
-
                 </div>
             </div>
+            -->
 
             <table class="table table-striped table-hover ml-4 mr-3 transcript-tight" id="transcriptTable"></table>
           </div>

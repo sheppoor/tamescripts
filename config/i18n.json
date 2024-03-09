@@ -62,7 +62,6 @@
         "generalNoSearchResults": "No search results",
 
         "footerLicense": "Licensed under the",
-        "footerCommercial": "Commercial licenses and SAAS solutions available at ",
         "footerOtherCopy": "Microsoft Teams is Copyright Microsoft Corporation.",
         "footerDisclaimer": "Tamescripts is not in any way affiliated with Microsoft or MS Teams."
         }
@@ -123,6 +122,7 @@
         "modalListCountSuffix": "transcripciones",
 
         "modalTranscriptTitle": "Transcripción",
+        "modalTranscriptFilterPlaceholder": "Filtrar dentro de la transcripción...",
 
         "generalAll": "Todos",
         "generalPerPage": "por página",
@@ -130,7 +130,6 @@
         "generalNoSearchResults": "Sin resultados de búsqueda",
 
         "footerLicense": "Con licencia bajo el",
-        "footerCommercial": "Licencias comerciales y soluciones SAAS disponibles en ",
         "footerOtherCopy": "Microsoft Teams tiene derechos de autor de Microsoft Corporation.",
         "footerDisclaimer": "Tamescripts no está afiliado de ninguna manera con Microsoft o MS Teams."
         }
@@ -191,14 +190,14 @@
             "modalListCountSuffix": "transcriptions",
    
             "modalTranscriptTitle": "Transcription",
-   
+            "modalTranscriptFilterPlaceholder": "Filtrer dans la transcription ...",
+
             "generalAll": "Tous",
             "generalPerPage": "par page",
             "generalFilterPlaceholder": "Filtrer dans les résultats de recherche...",
             "generalNoSearchResults": "Aucun résultat de recherche",
    
             "footerLicense": "Licence sous la",
-            "footerCommercial": "Licences commerciales et solutions SAAS disponibles sur ",
             "footerOtherCopy": "Microsoft Teams est protégé par le droit d'auteur de Microsoft Corporation.",
             "footerDisclaimer": "Tamescripts n'est en aucun cas affilié à Microsoft ou MS Teams."
         }
@@ -259,6 +258,7 @@
             "modalListCountSuffix": "成绩单",
    
             "modalTranscriptTitle": "成绩单",
+            "modalTranscriptFilterPlaceholder": "在转录本中过滤 ...",
    
             "generalAll": "全部",
             "generalPerPage": "每页",
@@ -266,7 +266,6 @@
             "generalNoSearchResults": "没有搜索结果",
    
             "footerLicense": "许可依据",
-            "footerCommercial": "商业许可证和 SAAS 解决方案可在 ",
             "footerOtherCopy": "Microsoft Teams 是 Microsoft Corporation 的版权。",
             "footerDisclaimer": "Tamescripts 与 Microsoft 或 MS Teams 没有任何关联。"        }
     },
@@ -326,14 +325,14 @@
             "modalListCountSuffix": "النصوص",
    
             "modalTranscriptTitle": "نسخة",
-   
+            "modalTranscriptFilterPlaceholder": "تصفية داخل النص ...",
+
             "generalAll": "All",
             "generalPerPage": "لكل صفحة",
             "generalFilterPlaceholder": "تصفية ضمن نتائج البحث ...",
             "generalNoSearchResults": "لا توجد نتائج بحث",
    
             "footerLicense": "مرخص بموجب",
-            "footerCommercial": "التراخيص التجارية وحلول SAAS متوفرة على",
             "footerOtherCopy": "Microsoft Teams حقوق الطبع والنشر لشركة Microsoft Corporation.",
             "footerDisclaimer": "Tamescripts ليست بأي حال من الأحوال تابعة لـ Microsoft أو MS Teams."            
         }
